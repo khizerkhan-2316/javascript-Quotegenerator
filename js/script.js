@@ -22,6 +22,17 @@ const quotes = [
   },
 ];
 
+//hide and show functions:
+const showElement = (element, visabillity) => {
+  document.getElementById(element).style.display = visabillity;
+};
+
+const hideElement = (element) => {
+  document.getElementById(element).style.display = "none";
+};
+
+//quote function to create a quote from the user:
+
 const insertQuote = () => {
   const quote = document.getElementById("quoteInput").value;
   const author = document.getElementById("authorInput").value;
@@ -56,6 +67,9 @@ const insertQuote = () => {
     quotes.push(object);
 
     error.innerHTML = "Your quote is added! - See it in the quotes";
+
+    hideElement("create-quote-container", "block");
+    showElement("main-frame-js", "block");
   }
 
   /* Skal tage værdien/teksten som bliver skrevet i textarea og de 2 tekstfelter
@@ -64,6 +78,7 @@ i quotes array af objekt-samling.
 */
 };
 
+// executes the display:
 const execute = () => {
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
@@ -81,14 +96,6 @@ const execute = () => {
   });
 };
 
-const showElement = (element, visabillity) => {
-  document.getElementById(element).style.display = visabillity;
-};
-
-const hideElement = (element) => {
-  document.getElementById(element).style.display = "none";
-};
-
 // onclick functions:
 document.getElementById("autogenerate").onclick = function () {
   execute();
@@ -99,7 +106,5 @@ document.getElementById("create").onclick = function () {
 };
 
 document.getElementById("submit").onclick = function () {
-  insertQuote(),
-    hideElement("create-quote-container"),
-    showElement("main-frame-js", "block");
+  insertQuote();
 };
