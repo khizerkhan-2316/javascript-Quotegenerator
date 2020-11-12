@@ -9,7 +9,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body id="body">
+    <div class="main-container">
+      <div id="main-frame">
+        <div class="logo">
+          <img src="images/quotation.svg" />
+        </div>
+
+        <div class="paragraph">
+          <p>
+            "Lorem ipsu is that it has a more or less normal distribution of
+            letters"
+          </p>
+        </div>
+
+        <div class="author">
+          <h2>- Herman Bang</h2>
+        </div>
+      </div>
+
+      <div id="main-frame-js">
+        <div class="logo">
+          <img src="images/quotation.svg" />
+        </div>
+
+        <div class="paragraph">
+          <p id="quote"></p>
+        </div>
+
+        <div class="author">
+          <h2 id="author"></h2>
+        </div>
+
+        <div class="tags" id="tag"></div>
+        <div class="button">
+          <button id="autogenerate">Autogenerer citater</button>
+        </div>
+      </div>
+    </div>
+
     <script src="js/script.js" async defer></script>
   </body>
 </html>
