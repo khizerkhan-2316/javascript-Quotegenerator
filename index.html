@@ -11,7 +11,7 @@
   </head>
   <body id="body">
     <div class="main-container">
-      <div id="main-frame">
+      <!-- <div id="main-frame">
         <div class="logo">
           <img src="images/quotation.svg" />
         </div>
@@ -27,7 +27,7 @@
           <h2>- Herman Bang</h2>
         </div>
       </div>
-
+-->
       <div id="main-frame-js">
         <div class="logo">
           <img src="images/quotation.svg" />
@@ -38,12 +38,32 @@
         </div>
 
         <div class="author">
-          <h2 id="author"></h2>
+          <h2 id="author">Do you want to read some quotes?</h2>
         </div>
 
         <div class="tags" id="tag"></div>
         <div class="button">
-          <button id="autogenerate">Autogenerer citater</button>
+          <button id="autogenerate">New Quote</button>
+          <button id="create">Create quote</button>
+        </div>
+      </div>
+
+      <div id="create-quote-container">
+        <div class="box">
+          <h2 class="headerStyling">Enter your quote:</h2>
+          <textarea id="quoteInput"></textarea>
+        </div>
+
+        <div class="box">
+          <h2 class="headerStyling">Enter the Author:</h2>
+          <input type="text" id="authorInput" />
+        </div>
+
+        <div class="box">
+          <h2 class="headerStyling">Enter the appropiate tags:</h2>
+          <input type="text" id="tagsInput" />
+          <p id="errorMessage"></p>
+          <button id="submit">Confirm</button>
         </div>
       </div>
     </div>
