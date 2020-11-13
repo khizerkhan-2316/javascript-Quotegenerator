@@ -61,14 +61,15 @@ const insertQuote = () => {
     let object = {
       quote: quote,
       author: author,
-      tags: [tags],
+      tags: arrayofTags,
     };
 
     quotes.push(object);
 
     error.innerHTML = "Your quote is added! - See it in the quotes";
 
-    hideElement("create-quote-container", "block");
+    window.setTimeout(hideElement("create-quote-container", "block"), 10000);
+
     showElement("main-frame-js", "block");
   }
 
@@ -94,6 +95,24 @@ const execute = () => {
 
     document.getElementById("tag").appendChild(span);
   });
+
+  console.log(quotes);
+};
+
+let arrayofTags = [];
+
+document.getElementById("tagsInput").onkeypress = function (event) {
+  if (event.keyCode == 13 || event.which == 13) {
+    const tags = document.getElementById("tagsInput").value;
+
+    let span = document.createElement("SPAN");
+
+    span.innerHTML = tags;
+
+    document.getElementById("tagsDisplay").appendChild(span);
+
+    arrayofTags.push(tags);
+  }
 };
 
 // onclick functions:
